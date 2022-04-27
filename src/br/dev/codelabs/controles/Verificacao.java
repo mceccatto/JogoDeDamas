@@ -2,6 +2,7 @@ package br.dev.codelabs.controles;
 
 public class Verificacao {
 	
+	//EFETUA VALIDACAO DAS REGRAS BASICAS DO JOGO
 	public static boolean regrasBasicas(String jogador,int linha1,int coluna1, int linha2, int coluna2, boolean status) {
 		if(linha1 < 0 || linha1 > 8 || coluna1 < 0 || coluna1 > 8 || linha2 < 0 || linha2 > 8 || coluna2 < 0 || coluna2 > 8) {
 			return false;

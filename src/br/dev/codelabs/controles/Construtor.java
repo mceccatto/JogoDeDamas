@@ -6,11 +6,15 @@ import br.dev.codelabs.objetos.Placar;
 
 public class Construtor {
 	
+	//EFETUA INICIALIZACAO DA MATRIZ DO TABULEIRO
 	public static String tabuleiro[][] = new String[8][8];
+	
+	//EFETUA INICIALIZACAO DOS ARRAYLIST
 	public static ArrayList<Peca> pecas = new ArrayList<Peca>();
 	public static ArrayList<ContadorJogadas> jogadas = new ArrayList<ContadorJogadas>();
 	public static ArrayList<Placar> placar = new ArrayList<Placar>();
 
+	//EFETUA A GERACAO DO TABULEIRO COM TODAS AS CASAS EM BRANCO
 	public static void gerarTabuleiro() {
 		int linha,coluna;
 		for(linha = 0; linha < 8; linha++) {
@@ -20,6 +24,7 @@ public class Construtor {
 		}
 	}
 	
+	//EFETUA A DISPOSICAO DAS PECAS NO TABULEIRO, JUNTAMENTE COM A ALIMENTACAO DO ARRAYLIST DE PECAS
 	public static void distribuirPecas() {
 		int coluna;
 		for(coluna = 1; coluna < 8; coluna = (coluna + 2)) {
@@ -40,6 +45,7 @@ public class Construtor {
 		}
 	}
 	
+	//EXECUTA TODAS AS TAREFAS PARA INICIALIZACAO DO JOGO, JUNTAMENTE COM A ALIMENTACAO DOS ARRAYLIST DO PLACAR E JOGADAS
 	public static void executarConstrutor() {
 		gerarTabuleiro();
 		distribuirPecas();

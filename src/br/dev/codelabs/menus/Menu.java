@@ -5,6 +5,7 @@ import br.dev.codelabs.objetos.Peca;
 
 public class Menu {
 	
+	//EFETUA EXIBICAO DO MENU SUPERIOR
 	public static void menuSuperior() {
 		System.out.println();
 		System.out.println("************************");
@@ -15,6 +16,7 @@ public class Menu {
 		System.out.println("    ---------------");
 	}
 	
+	//EFETUA EXIBICAO DO MENU INFERIOR
 	public static void menuInferior() {
 		System.out.println("    ---------------");
 		System.out.println("#   1 2 3 4 5 6 7 8   #");
@@ -22,6 +24,7 @@ public class Menu {
 	
 	public static void tabuleiroAtualizado() {
 		
+		//EFETUA EXIBICAO DAS INFORMACOES CONTIDAS NO ARRAYLIST DE PECAS
 		for(Peca peca:Construtor.pecas) {
 			if(peca instanceof Dama) {
 				if(((Dama)peca).getStatus() == true) {
@@ -43,6 +46,7 @@ public class Menu {
 			}
 		}
 		
+		//EFETUA A CONSTRUCAO COMPLETA PARA EXIBIXAO
 		menuSuperior();
 		for(int linha = 0; linha < 8; linha++) {
 			System.out.print((linha + 1) + " | ");
@@ -58,6 +62,7 @@ public class Menu {
 		menuInferior();
 	}
 	
+	//EFETUA EXIBICAO DAS INFORMACOES DA PARTIDA
 	public static void menuControle() {
 		System.out.println();
 		System.out.println("PONTOS JOGADOR A: " + Construtor.placar.get(0).getPontos());

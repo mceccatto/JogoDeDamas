@@ -5,6 +5,7 @@ import br.dev.codelabs.controles.Construtor;
 
 public class Pecas {
 	
+	//COLETA O STATUS ATUAL DA PECA DO JOGADOR DA VEZ
 	public static boolean statusPecaJogadorAtual(String jogador, int linha1, int coluna1) {
 		boolean status = false;
 		for(Peca peca:Construtor.pecas) {
@@ -18,6 +19,7 @@ public class Pecas {
 		return status;
 	}
 	
+	//COLETA O INDEX DA PECA ATUAL DO JOGADOR
 	public static int pecaJogadorAtual(String jogador, int linha1, int coluna1) {
 		int index = 0;
 		for(Peca peca:Construtor.pecas) {
@@ -34,6 +36,7 @@ public class Pecas {
 		return index;
 	}
 	
+	//COLETA O INDEX DA PECA DO ADVERSARIO
 	public static int pecaJogadorAdversario(String jogador, int linha2, int coluna2) {
 		int index = 0;
 		for(Peca peca:Construtor.pecas) {
