@@ -52,19 +52,19 @@ public class Main {
 				//VERIFICA SE AS REGRAS BASICAS FORAM ATENDIDAS
 				if(!Verificacao.regrasBasicas(jogador,linha1,coluna1,linha2,coluna2,false)) {
 					System.out.println();
-					System.out.println("JOGADA INVALIDA!");
+					System.out.println("> > > > > JOGADA INVALIDA! < < < < <");
 				} else {
 					
 					//VERIFICA SE O DESTINO ESTA VAZIO
 					if(!Tabuleiro.casaDestino(linha2,coluna2)) {
 						System.out.println();
-						System.out.println("JOGADA INVALIDA!");
+						System.out.println("> > > > > JOGADA INVALIDA! < < < < <");
 					} else {
 						
 						//EFETUA UMA JOGADA SIMPRES QUE PODE OU NAO CONTER UMA PONTUACAO
 						if(!Jogada.executarJogadaSimples(jogador,linha1,coluna1,linha2,coluna2)) {
 							System.out.println();
-							System.out.println("JOGADA INVALIDA!");
+							System.out.println("> > > > > JOGADA INVALIDA! < < < < <");
 						}
 					}
 				}
@@ -73,19 +73,19 @@ public class Main {
 				//VERIFICA SE AS REGRAS BASICAS FORAM ATENDIDAS
 				if(!Verificacao.regrasBasicas(jogador,linha1,coluna1,linha2,coluna2,true)) {
 					System.out.println();
-					System.out.println("JOGADA INVALIDA!");
+					System.out.println("> > > > > JOGADA INVALIDA! < < < < <");
 				} else {
 					
 					//VERIFICA SE O DESTINO ESTA VAZIO
 					if(!Tabuleiro.casaDestino(linha2,coluna2)) {
 						System.out.println();
-						System.out.println("JOGADA INVALIDA!");
+						System.out.println("> > > > > JOGADA INVALIDA! < < < < <");
 					} else {
 						
 						//EFETUA UMA JOGADA AVANCADA
 						if(!Jogada.executarJogadaAvancada(jogador,linha1,coluna1,linha2,coluna2)) {
 							System.out.println();
-							System.out.println("JOGADA INVALIDA!");
+							System.out.println("> > > > > JOGADA INVALIDA! < < < < <");
 						}
 					}
 				}

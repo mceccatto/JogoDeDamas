@@ -19,6 +19,17 @@ public class Jogada {
 		//VERIFICA SE O JOGADOR ANDOU UMA CASA APENAS PARA DESLOCAMENTO DE PECA
 		if(linhas == 1 && colunas == 1) {
 			
+			//VERIFICA SE O JOGADOR NAO ESTA VOLTANDO CASAS
+			if(jogador == "A" ) {
+				if(linha1 < linha2) {
+					return false;
+				}
+			} else {
+				if(linha1 > linha2) {
+					return false;
+				}
+			}
+			
 			//EFETUA ATUALIZACAO DAS INFORMACOES VISUAIS DO TABULEIRO
 			Construtor.tabuleiro[linha1][coluna1] = "×";
 			Construtor.tabuleiro[linha2][coluna2] = jogador;
