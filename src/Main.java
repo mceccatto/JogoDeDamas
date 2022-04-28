@@ -111,12 +111,15 @@ public class Main {
 		//EXIBE O RESULTADO DA CHECAGEM DE VENCEDOR OU EMPATE
 		switch(vencedor) {
 			case 1 :
+			System.out.println();
 			System.out.println("O jogador A venceu!");
 			break;
 			case 2:
+			System.out.println();
 			System.out.println("O jogador B venceu!");
 			break;
 			case 3:
+			System.out.println();
 			System.out.println("Ops... Empate!");
 			break;
 		}
