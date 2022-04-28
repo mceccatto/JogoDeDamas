@@ -1,7 +1,7 @@
 package br.dev.codelabs.menus;
 import br.dev.codelabs.controles.Construtor;
-import br.dev.codelabs.objetos.Dama;
-import br.dev.codelabs.objetos.Peca;
+//import br.dev.codelabs.objetos.Dama;
+//import br.dev.codelabs.objetos.Peca;
 
 public class Menu {
 	
@@ -22,10 +22,11 @@ public class Menu {
 		System.out.println("#   1 2 3 4 5 6 7 8   #");
 	}
 	
+	//EFETUA A TABULACAO DO TABULEIRO PARA EXIBICAO
 	public static void tabuleiroAtualizado() {
 		
 		//EFETUA EXIBICAO DAS INFORMACOES CONTIDAS NO ARRAYLIST DE PECAS
-		for(Peca peca:Construtor.pecas) {
+		/*for(Peca peca:Construtor.pecas) {
 			if(peca instanceof Dama) {
 				if(((Dama)peca).getStatus() == true) {
 					System.out.println(
@@ -46,7 +47,7 @@ public class Menu {
 					peca.getAtivo()
 				);
 			}
-		}
+		}*/
 		
 		//EFETUA A CONSTRUCAO COMPLETA PARA EXIBIXAO
 		menuSuperior();
