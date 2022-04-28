@@ -4,11 +4,13 @@ public class Peca {
 	
 	private String jogador;
 	private int linha,coluna;
+	private boolean ativo;
 
-	public Peca(String jogador, int linha, int coluna) {
+	public Peca(String jogador, int linha, int coluna, boolean ativo) {
 		this.jogador = jogador;
 		this.linha = linha;
 		this.coluna = coluna;
+		this.ativo = ativo;
 	}
 
 	public String getJogador() {
@@ -33,6 +35,14 @@ public class Peca {
 
 	public void setColuna(int coluna) {
 		this.coluna = coluna;
+	}
+	
+	public boolean getAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
 	}
 	
 }

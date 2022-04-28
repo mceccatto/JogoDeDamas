@@ -8,7 +8,7 @@ public class Jogada {
 	public static boolean executarJogadaSimples(String jogador,int linha1,int coluna1,int linha2,int coluna2) {
 		
 		//COLETA O INDEX DA PECA ATUAL DO JOGADOR
-		int pecaIndexJogador = Pecas.pecaJogadorAtual(jogador, linha1, coluna1),jogadas = 0;
+		int pecaIndexJogador = Pecas.pecaJogadorAtual(jogador,linha1,coluna1,true),jogadas = 0;
 		
 		//LEVANTA AS INFORMACOES PARA O CALCULO PROPORCIONAL
 		int linhas = linha1 - linha2;
@@ -22,17 +22,6 @@ public class Jogada {
 			//EFETUA ATUALIZACAO DAS INFORMACOES VISUAIS DO TABULEIRO
 			Construtor.tabuleiro[linha1][coluna1] = "×";
 			Construtor.tabuleiro[linha2][coluna2] = jogador;
-			Construtor.pecas.get(pecaIndexJogador).setLinha(linha2);
-			Construtor.pecas.get(pecaIndexJogador).setColuna(coluna2);
-			
-			//VERIFICA SE O DESTINO E O LADO OPOSTO DO TABULEIRO PARA CONVERTER A PECA ATUAL EM DAMA
-			if(jogador == "A" && linha2 == 0 || jogador == "B" && linha2 == 7) {
-				Construtor.pecas.add(new Dama(jogador,linha2,coluna2,true));
-				Construtor.pecas.remove(pecaIndexJogador);
-			} else {
-				Construtor.pecas.get(pecaIndexJogador).setLinha(linha2);
-				Construtor.pecas.get(pecaIndexJogador).setColuna(coluna2);
-			}
 			
 			//ATUALIZA O CONTADOR DE JOGADAS
 			jogadas = Construtor.jogadas.get(0).getJogadas() + 1;
@@ -46,6 +35,15 @@ public class Jogada {
 		} else {
 			return false;
 		}
+		
+		//EFETUA ATUALIZACAO DAS INFORMACOES NO ARRAYLIST
+		Construtor.pecas.get(pecaIndexJogador).setLinha(linha2);
+		Construtor.pecas.get(pecaIndexJogador).setColuna(coluna2);
+		
+		//VERIFICA SE O DESTINO E O LADO OPOSTO DO TABULEIRO PARA CONVERTER A PECA ATUAL EM DAMA
+		if(jogador == "A" && linha2 == 0 || jogador == "B" && linha2 == 7) {
+			Construtor.pecas.set(pecaIndexJogador, new Dama(jogador,linha2,coluna2,true,true));
+		}
 		return true;
 	}
 	
@@ -53,40 +51,39 @@ public class Jogada {
 	public static void jogadaAvancada(String jogador,int linha1,int coluna1,int linha2,int coluna2,int i,int j) {
 		
 		//COLETA O INDEX DA PECA ATUAL DO JOGADOR
-		int pecaIndexJogador = Pecas.pecaJogadorAtual(jogador, linha1, coluna1),pecaIndexOponente,pontoA = 0,pontoB = 0;
+		int pecaIndexJogador = Pecas.pecaJogadorAtual(jogador,linha1,coluna1,true),pecaIndexOponente,pontoA = 0,pontoB = 0;
 		
 		//COLETA O INDEX DA PECA DO ADVERSARIO
 		if(jogador == "A") {
-			pecaIndexOponente = Pecas.pecaJogadorAdversario("B", i, j);
+			pecaIndexOponente = Pecas.pecaJogadorAdversario("B",i,j,true);
 		} else {
-			pecaIndexOponente = Pecas.pecaJogadorAdversario("A", i, j);
+			pecaIndexOponente = Pecas.pecaJogadorAdversario("A",i,j,true);
 		}
 		
 		//EFETUA ATUALIZACAO DO PLACAR DO JOGO
 		if(jogador == "A" && Construtor.tabuleiro[i][j] == "B") {
 			pontoA = Construtor.placar.get(0).getPontos() + 1;
 			Construtor.placar.get(0).setPontos(pontoA);
+			Construtor.pecas.get(pecaIndexOponente).setAtivo(false);
 		} else if(jogador == "B" && Construtor.tabuleiro[i][j] == "A") {
 			pontoB = Construtor.placar.get(1).getPontos() + 1;
 			Construtor.placar.get(1).setPontos(pontoB);
+			Construtor.pecas.get(pecaIndexOponente).setAtivo(false);
 		}
 		
 		//EFETUA ATUALIZACAO DAS INFORMACOES VISUAIS DO TABULEIRO
 		Construtor.tabuleiro[linha1][coluna1] = "×";
 		Construtor.tabuleiro[linha2][coluna2] = jogador;
 		Construtor.tabuleiro[i][j] = "×";
-		
-		//EFETUA ATUALIZACAO DA PECA DO JOGADOR NO ARRAYLIST, JUNTAMENTE COM A REMOCAO DA PECA CAPTURADA DO ADVERSARIO
 		Construtor.pecas.get(pecaIndexJogador).setLinha(linha2);
 		Construtor.pecas.get(pecaIndexJogador).setColuna(coluna2);
-		Construtor.pecas.remove(pecaIndexOponente);
 		
 	}
 	
 	public static boolean executarJogadaAvancada(String jogador,int linha1,int coluna1,int linha2,int coluna2) {
 		
 		//COLETA O INDEX DA PECA ATUAL DO JOGADOR
-		int pecaIndexJogador = Pecas.pecaJogadorAtual(jogador, linha1, coluna1);
+		int pecaIndexJogador = Pecas.pecaJogadorAtual(jogador,linha1,coluna1,true);
 		
 		//INSTANCIA ALGUNS PARAMETROS
 		int testeCasas = 0,pecaDuplicada = 0,jogadas = 0;
@@ -225,11 +222,7 @@ public class Jogada {
 		
 		//VERIFICA SE O DESTINO E O LADO OPOSTO DO TABULEIRO PARA CONVERTER A PECA ATUAL EM DAMA E TAMBEM REMOVE A PECA DO ADVERSARIO DO ARRAYLIST
 		if(jogador == "A" && linha2 == 0 || jogador == "B" && linha2 == 7) {
-			Construtor.pecas.add(new Dama(jogador,linha2,coluna2,true));
-			Construtor.pecas.remove(pecaIndexJogador);
-		} else {
-			Construtor.pecas.get(pecaIndexJogador).setLinha(linha2);
-			Construtor.pecas.get(pecaIndexJogador).setColuna(coluna2);
+			Construtor.pecas.set(pecaIndexJogador, new Dama(jogador,linha2,coluna2,true,true));
 		}
 		
 		//ATUALIZA O CONTADOR DE JOGADAS

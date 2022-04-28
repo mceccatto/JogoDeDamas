@@ -47,7 +47,7 @@ public class Main {
 			coluna2 = coluna2 -1;
 			
 			//EFETUA TESTE PARA VERIFICAR SE A PECA DO JOGADOR E COMUM OU UMA DAMA
-			if(!Pecas.statusPecaJogadorAtual(jogador,linha1,coluna1)) {
+			if(!Pecas.statusPecaJogadorAtual(jogador,linha1,coluna1,true)) {
 				
 				//VERIFICA SE AS REGRAS BASICAS FORAM ATENDIDAS
 				if(!Verificacao.regrasBasicas(jogador,linha1,coluna1,linha2,coluna2,false)) {

@@ -29,19 +29,19 @@ public class Construtor {
 		int coluna;
 		for(coluna = 1; coluna < 8; coluna = (coluna + 2)) {
 			tabuleiro[0][coluna] = "B";
-			pecas.add(new Peca("B",0,coluna));
+			pecas.add(new Peca("B",0,coluna,true));
 			tabuleiro[2][coluna] = "B";
-			pecas.add(new Peca("B",2,coluna));
+			pecas.add(new Peca("B",2,coluna,true));
 			tabuleiro[6][coluna] = "A";
-			pecas.add(new Peca("A",6,coluna));
+			pecas.add(new Peca("A",6,coluna,true));
 		}
 		for(coluna = 0; coluna < 8; coluna = (coluna + 2)) {
 			tabuleiro[1][coluna] = "B";
-			pecas.add(new Peca("B",1,coluna));
+			pecas.add(new Peca("B",1,coluna,true));
 			tabuleiro[5][coluna] = "A";
-			pecas.add(new Peca("A",5,coluna));
+			pecas.add(new Peca("A",5,coluna,true));
 			tabuleiro[7][coluna] = "A";
-			pecas.add(new Peca("A",7,coluna));
+			pecas.add(new Peca("A",7,coluna,true));
 		}
 	}
 	

@@ -33,6 +33,7 @@ public class Menu {
 						((Dama)peca).getJogador()+" | "+
 						((Dama)peca).getLinha()+" | "+
 						((Dama)peca).getColuna()+" | "+
+						((Dama)peca).getAtivo()+" | "+
 						((Dama)peca).getStatus()
 					);
 				}
@@ -41,7 +42,8 @@ public class Menu {
 					Construtor.pecas.indexOf(peca)+" | "+
 					peca.getJogador()+" | "+
 					peca.getLinha()+" | "+
-					peca.getColuna()
+					peca.getColuna()+" | "+
+					peca.getAtivo()
 				);
 			}
 		}

@@ -4,8 +4,8 @@ public class Dama extends Peca{
 	
 	private boolean status;
 
-	public Dama(String jogador, int linha, int coluna, boolean status) {
-		super(jogador, linha, coluna);
+	public Dama(String jogador,int linha,int coluna,boolean ativo,boolean status) {
+		super(jogador,linha,coluna,ativo);
 		this.status = status;
 	}
 

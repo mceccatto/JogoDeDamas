@@ -6,11 +6,14 @@ import br.dev.codelabs.controles.Construtor;
 public class Pecas {
 	
 	//COLETA O STATUS ATUAL DA PECA DO JOGADOR DA VEZ
-	public static boolean statusPecaJogadorAtual(String jogador, int linha1, int coluna1) {
+	public static boolean statusPecaJogadorAtual(String jogador, int linha1, int coluna1, boolean ativo) {
 		boolean status = false;
 		for(Peca peca:Construtor.pecas) {
 			if(peca instanceof Dama) {
-				if(((Dama)peca).getJogador() == jogador && ((Dama)peca).getLinha() == linha1 && ((Dama)peca).getColuna() == coluna1 && ((Dama)peca).getStatus() == true) {
+				if(((Dama)peca).getJogador() == jogador && ((Dama)peca).getLinha() == linha1 && ((Dama)peca).getColuna() == coluna1 && ((Dama)peca).getAtivo() == true && ((Dama)peca).getStatus() == true) {
+					status = true;
+					break;
+				} else if (peca.getJogador() == jogador && peca.getLinha() == linha1 && peca.getColuna() == coluna1 && peca.getAtivo() == true) {
 					status = true;
 					break;
 				}
@@ -20,15 +23,15 @@ public class Pecas {
 	}
 	
 	//COLETA O INDEX DA PECA ATUAL DO JOGADOR
-	public static int pecaJogadorAtual(String jogador, int linha1, int coluna1) {
+	public static int pecaJogadorAtual(String jogador, int linha1, int coluna1, boolean ativo) {
 		int index = 0;
 		for(Peca peca:Construtor.pecas) {
 			if(peca instanceof Dama) {
-				if(((Dama)peca).getJogador() == jogador &&((Dama)peca).getLinha() == linha1 && ((Dama)peca).getColuna() == coluna1) {
+				if(((Dama)peca).getJogador() == jogador &&((Dama)peca).getLinha() == linha1 && ((Dama)peca).getColuna() == coluna1 && ((Dama)peca).getStatus() == true) {
 					index = Construtor.pecas.indexOf(peca);
 					break;
 				}
-			} else if(peca.getJogador() == jogador && peca.getLinha() == linha1 && peca.getColuna() == coluna1) {
+			} else if(peca.getJogador() == jogador && peca.getLinha() == linha1 && peca.getColuna() == coluna1 && peca.getAtivo() == true) {
 				index = Construtor.pecas.indexOf(peca);
 				break;
 			}
@@ -37,15 +40,15 @@ public class Pecas {
 	}
 	
 	//COLETA O INDEX DA PECA DO ADVERSARIO
-	public static int pecaJogadorAdversario(String jogador, int linha2, int coluna2) {
+	public static int pecaJogadorAdversario(String jogador, int linha2, int coluna2, boolean ativo) {
 		int index = 0;
 		for(Peca peca:Construtor.pecas) {
 			if(peca instanceof Dama) {
-				if(((Dama)peca).getJogador() == jogador &&((Dama)peca).getLinha() == linha2 && ((Dama)peca).getColuna() == coluna2) {
+				if(((Dama)peca).getJogador() == jogador &&((Dama)peca).getLinha() == linha2 && ((Dama)peca).getColuna() == coluna2 && ((Dama)peca).getStatus() == true) {
 					index = Construtor.pecas.indexOf(peca);
 					break;
 				}
-			} else if(peca.getJogador() == jogador && peca.getLinha() == linha2 && peca.getColuna() == coluna2) {
+			} else if(peca.getJogador() == jogador && peca.getLinha() == linha2 && peca.getColuna() == coluna2 && peca.getAtivo() == true) {
 				index = Construtor.pecas.indexOf(peca);
 				break;
 			}
