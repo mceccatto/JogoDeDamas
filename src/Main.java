@@ -109,7 +109,7 @@ public class Main {
 		}
 		
 		//EXIBE O RESULTADO DA CHECAGEM DE VENCEDOR OU EMPATE
-		switch(vencedor) {
+		switch(vencedor) { 
 			case 1 :
 			System.out.println();
 			System.out.println("O jogador A venceu!");
