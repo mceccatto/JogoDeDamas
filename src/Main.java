@@ -1,3 +1,9 @@
+/* Marcelo Ceccatto - 25834851
+ * Felipe dos santos Fabienski - 13112368
+ * Jonas Felipe Durau - 27588254
+ * Andre Luiz Poyer da Silva - 8125901699
+ * Kevin Guerke Lopes - 27142205
+ * */
 import java.util.Scanner;
 import br.dev.codelabs.controles.Construtor;
 import br.dev.codelabs.controles.Verificacao;

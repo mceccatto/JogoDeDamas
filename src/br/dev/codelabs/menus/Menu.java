@@ -26,7 +26,7 @@ public class Menu {
 	public static void tabuleiroAtualizado() {
 		
 		//EFETUA EXIBICAO DAS INFORMACOES CONTIDAS NO ARRAYLIST DE PECAS
-		for(Peca peca:Construtor.pecas) {
+		/*for(Peca peca:Construtor.pecas) {
 			if(peca instanceof Dama) {
 				if(((Dama)peca).getStatus() == true) {
 					System.out.println(
@@ -47,7 +47,7 @@ public class Menu {
 					peca.getAtivo()
 				);
 			}
-		}
+		}*/
 		
 		//EFETUA A CONSTRUCAO COMPLETA PARA EXIBIXAO
 		menuSuperior();
